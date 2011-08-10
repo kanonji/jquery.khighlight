@@ -13,16 +13,18 @@
                 $.extend( settings, options );
             }
             return this.eq(0).each(function(){
-                var coord = methods._coord( $(this) );
+                var coord = privates._coord( $(this) );
                 console.log(coord);
-                methods._overlay( coord.top, coord.bottom, coord.left, coord.right );
+                privates._overlay( coord.top, coord.bottom, coord.left, coord.right );
                 var self = this;
-                $(window).bind( 'resize', function(e){(methods._invoke())(e, self);} );
+                $(window).bind( 'resize', function(e){(privates._invoke())(e, self);} );
             });
-        },
+        }
+    };
+    var privates = {
         _invoke: function() {
             return function( e, element ) {
-                var coord = methods._coord( $(element) );
+                var coord = privates._coord( $(element) );
                 $left = $('.khighlight-left');
                 $right = $('.khighlight-right');
                 $bottom = $('.khighlight-bottom');
