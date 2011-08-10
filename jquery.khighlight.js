@@ -14,7 +14,6 @@
             }
             return this.eq(0).each(function(){
                 var coord = privates._coord( $(this) );
-                console.log(coord);
                 privates._overlay( coord.top, coord.bottom, coord.left, coord.right );
                 var self = this;
                 $(window).bind( 'resize', function(e){(privates._invoke())(e, self);} );
