@@ -1,5 +1,5 @@
 /**
- * high light - jQuery plugin
+ * k high light - jQuery plugin
  */
 (function($){
     var settings = {
